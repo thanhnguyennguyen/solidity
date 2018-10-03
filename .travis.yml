@@ -1,0 +1,12 @@
+cache:
+  directories:
+    - ./node_modules
+language: node_js
+node_js:
+  - "8"
+
+install:
+  - npm install -g ganache-cli truffle
+script:
+  - ganache-cli -p 8545  > /dev/null &
+  - truffle test
